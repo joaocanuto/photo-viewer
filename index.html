@@ -41,21 +41,16 @@
         const imagesData = [
             {
                 src: "assets/dia-dos-namorados/66-20250408_122740.jpg",
-                title: "Buquê de Rosas Vermelhas"
             },
             {
                 src: "assets/dia-dos-namorados/73-20250408_150715.jpg",
-                title: "Caixa de Chocolates Finos"
             },
             {
                 src: "assets/dia-dos-namorados/92-20250408_151110.jpg",
-                title: "Anel de Prata com Detalhe"
             },
             {
                 src: "assets/dia-dos-namorados/125-20250408_152115.jpg",
-                title: "Urso de Pelúcia Grande"
             }
-            // Adicione mais objetos de imagem aqui com 'src' e 'title'
         ];
 
         imagesData.forEach(imageData => {
@@ -64,11 +59,9 @@
 
             const img = document.createElement('img');
             img.src = imageData.src;
-            img.alt = imageData.title;
 
             const button = document.createElement('button');
             button.classList.add('copy-button');
-            button.dataset.imageName = imageData.title;
             button.textContent = 'Copiar Link';
 
             imageContainer.appendChild(img);
@@ -91,13 +84,6 @@
                     const fullLink = `${baseUrl}${finalImagePath}`;
 
                     navigator.clipboard.writeText(fullLink)
-                        .then(() => {
-                            alert(`Link para "${imageName}" copiado!`);
-                        })
-                        .catch(err => {
-                            console.error('Falha ao copiar o link: ', err);
-                            alert(`Erro ao copiar o link para "${imageName}".`);
-                        });
                 }
             }
         });
